@@ -130,3 +130,27 @@ class Addition {
     }
 }
 console.log(Addition.add(2,3));
+
+// Abstraction
+
+class person {
+    constructor(name,pass){
+        this.name = name;
+        this.pass = pass;
+    }
+
+    get details(){
+        console.log(this.name,this.pass)
+    }
+
+    #details(pass){
+        return btoa(pass);
+    }
+
+    newDetails(){
+        console.log(this.#details());
+    }
+}
+
+const personDetails = new person('balaji','balaji123');
+personDetails.newDetails();
